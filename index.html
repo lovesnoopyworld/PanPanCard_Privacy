@@ -1,200 +1,125 @@
-胖胖名片（Plump Card / PanPan Card）隱私政策 / Privacy Policy
-狀態：已填入正式聯絡資料，待法律審閱。 公開位置：https://github.com/lovesnoopyworld/PanPanCard/blob/main/docs/privacy-policy.md。正式上架前仍應確認內容並以穩定 HTTPS 網址填入 App Store Connect。
-事實基礎見 [docs/03-data-lifecycle-privacy-spec.md](03-data-lifecycle-privacy-spec.md)；措辭與該文件 §3A.3 / §6 一致。不得改寫成「完全不外傳」的絕對句 —— AI 辨識模式會傳資料給第三方（使用者主動選擇 + 自帶金鑰）。
----
-
-中文
-生效日：2026-09-13
-
-摘要
-胖胖名片 沒有自己的伺服器，也沒有 胖胖名片 帳號。你掃描的名片、辨識出的聯絡資訊與影像都存在你的 iPhone 上。App 不做分析追蹤、不收集使用行為資料。唯一會把資料送出裝置的情況，是你主動選擇使用「AI 名片辨識」，且用你自己的第三方 API 金鑰。
-
-1. 資料存在哪裡
-名片結構化欄位、辨識文字、影像、見面脈絡、標籤、你的電子名片：存在 iPhone App 沙盒（受 iOS 檔案保護加密）。
-外部服務的授權 token（未來 Google / Outlook 匯出功能上線後，若你連接帳號）：只存在 iOS 鑰匙圈，不進其他儲存。
-AI 服務商 API 金鑰（若你啟用 AI 辨識）：只存在 iOS 鑰匙圈，設定為「本機、不同步 iCloud、不隨備份還原到他機」。
-胖胖名片 不將以上任何資料上傳到我們的伺服器 —— 我們沒有伺服器。
-2. 我們處理哪些資料、目的與依據
-資料	目的	依據
-名片影像與 OCR 文字	辨識並整理成聯絡人	履行你的要求
-聯絡欄位（姓名、公司、職稱、部門、電話、Email、地址、社群…）	名片庫核心功能	履行你的要求
-見面脈絡、標籤、備註	關係管理	履行你的要求
-本機操作記錄（僅記操作類型與時間，不記欄位內容，保存 90 天）	稽核與問題排查	正當利益（最小化）
-我們不收集：診斷 / 當機 / 使用行為資料、位置、聯絡人以外的個人資料。App 內沒有第三方分析或追蹤 SDK。
-
-免費版（非 Pro）廣告：生涯前 50 張新名片為無廣告試用；超過後，App 可能在儲存前依規則顯示 Google AdMob Rewarded 廣告。必須完整觀看後才會儲存名片；取消或載入失敗不會儲存。廣告由 Google 依其政策處理；可能涉及裝置識別碼、廣告 ID、IP 等（依你的系統設定與 Google 設定而定）。Pro 買斷後不再顯示廣告。詳見 §3A。
-
-3. AI 名片辨識（選用功能）
-辨識預設完全在你的 iPhone 上進行，名片內容不會離開裝置。
-
-你可以在「設定 › 名片辨識」改用「AI 辨識」或「混合」模式。啟用前會有一次性同意畫面說明以下事項：
-
-啟用後，名片的影像與辨識文字會傳送給你指定的第三方 AI 服務商（目前為 Anthropic、OpenAI 或 Google），由其依自己的隱私政策處理。
-傳送使用你自己的 API 金鑰；相關費用由你與該服務商的關係承擔。
-胖胖名片 沒有伺服器參與這個過程，不居間、不保存你的金鑰、查詢或辨識結果。
-「混合」模式只有在裝置辨識信心不足時才呼叫 AI。
-你可以隨時切回「裝置辨識」，之後名片內容即不再外傳。
-使用 AI 辨識前，請確認你有權處理該名片持有人的個人資料。
-App 內會顯示「本月 AI 辨識次數 / token」的粗略本機計數，僅供你參考；實際用量與費用以你的服務商帳單為準。此計數不會離開裝置。
-
-3A. 免費版廣告（Google AdMob）
-誰會看到：未購買 胖胖名片 Pro、且已超過生涯前 50 張無廣告試用的使用者。
-何時顯示：在儲存新名片前顯示 Rewarded 廣告；完整觀看後才儲存，不會阻擋拍攝、辨識或編輯流程。
-頻率：第 51 張起依 Rewarded 廣告頻率規則處理；兩次展示間隔至少 2 分鐘（不補播）。
-資料處理：廣告由 Google AdMob 載入與計量；可能使用裝置廣告識別碼、粗略位置（IP）、App 互動等，依 Google 隱私政策 與 AdMob 政策 處理。我們不會因廣告而取得你的名片內容。
-控制：購買 Pro 可永久移除廣告；iOS「設定 › 隱私權與安全性 › 追蹤」與「Apple 廣告」等系統設定亦可能影響廣告個人化。
-試用計數：生涯 50 張試用以 Keychain 最佳努力保存於本機，非跨裝置保證。
-第三方服務商連結：
-
-Anthropic 隱私政策：https://www.anthropic.com/legal/privacy
-OpenAI 隱私政策：https://openai.com/policies/privacy-policy
-Google 隱私政策：https://policies.google.com/privacy
-4. 匯出到外部通訊錄
-當你選擇「加入 iPhone 通訊錄」時，是你主動把選定的名片單向寫入 iPhone「聯絡人」App。寫入前一律先讓你預覽。胖胖名片 不會把系統通訊錄匯入、也不做雙向同步。之後這些聯絡人依 Apple / 你使用的通訊錄帳號服務之政策處理。
-
-Google / Outlook 匯出為計畫中的未來功能；上線後亦為你主動、單向寫入，寫入前會先預覽，且不做雙向同步。
-
-5. 你的權利與控制
-匯出：設定 › 匯出完整備份（JSON）或匯出 CSV。
-刪除（四種，介面分別標示影響範圍）：
-1. 清除所有資料 —— 刪除 iPhone 上的一切（名片庫、影像、辨識文字、合併復原記錄、你的電子名片、外部授權 token、AI 金鑰與同意記錄）。 2. 解除外部服務（Google / Outlook 上線後）—— 刪除本機的授權 token 並嘗試呼叫該服務的撤銷端點；不會自動刪除你已匯出到該服務或 iPhone 通訊錄的聯絡人。 3.（1.5 起）刪除 iCloud 同步資料。 4.（未來 AI 帳號功能）刪除 AI 帳號與研究資料 —— 目前尚未推出。
-
-更正：直接在 App 內編輯任何欄位。
-由於資料在你的裝置上、且沒有 胖胖名片 帳號，我們無法代你存取或刪除 —— 上述操作都由你在 App 內完成。
-6. 權限
-相機：拍攝名片。
-相片：從相簿匯入名片照片。
-通訊錄：在你確認後寫入整理好的聯絡人。
-7. 資料保存
-資料保留到你刪除為止。匯出工作記錄成功後 30 天清除；本機操作記錄 90 天後清除。這些清理由 App 於啟動時執行。
-
-8. 兒童
-胖胖名片 針對商務使用者設計，不針對 13 歲以下兒童，也不會刻意收集其個人資料。
-
-9. 第三方
-Apple（Sign in with Apple、CloudKit —— 1.5 起）：身分與你自己 iCloud 內的同步資料，依 Apple 條款。
-Anthropic / OpenAI / Google（僅在你啟用 AI 辨識時，用你自帶金鑰）：見 §3。
-Google / Microsoft（僅在你主動匯出時）：見 §4。
-Google AdMob（僅免費版、符合 §3A 條件時）：見 §3A。
-名稱與商標為各自所有者所有；本 App 僅為說明功能而指名引用，與上述任何一方無隸屬或背書關係。
-10. 變更
-政策更新時會修改本頁的生效日；重大變更會在 App 內提示。
-
-11. 聯絡我們
-隱私相關問題請寄：lovesnoopy.world@gmail.com 開發者：Hsuan Yu Liu
-
----
-
-English
-Effective date: 2026-09-13
-
-Summary
-胖胖名片 has no server of its own and no 胖胖名片 account. The business cards you scan, the contact details recognized from them, and the images all stay on your iPhone. The app does no analytics or tracking and collects no usage data. The only time any data leaves your device is when you choose to use "AI card recognition" with your own third-party API key.
-
-1. Where your data lives
-Structured card fields, recognized text, images, meeting context, tags, your
-digital card: in the iPhone app sandbox, encrypted with iOS file protection.
-
-OAuth tokens (when the future Google / Outlook export feature ships and you connect an account): iOS Keychain only.
-AI provider API key (if you enable AI recognition): iOS Keychain only, marked
-device-only — not synced to iCloud, not restored to another device.
-
-胖胖名片 does not upload any of the above to our servers — we have none.
-2. What we process, why, and on what basis
-Data	Purpose	Basis
-Card image and OCR text	Recognize and organize into a contact	Your request
-Contact fields (name, company, title, department, phone, email, address, social…)	Core card-library function	Your request
-Meeting context, tags, notes	Relationship management	Your request
-Local action log (action type + time only, no field content, kept 90 days)	Audit / troubleshooting	Legitimate interest (minimized)
-We do not collect diagnostics / crash / behavioral data, location, or personal data beyond contacts. There is no third-party analytics or tracking SDK in the app.
-
-Ads (free tier, non-Pro): If you have not purchased Pro, the app may show Google AdMob Rewarded ads before saving a new card after the first 50 cards. The ad must be completed before saving; cancellation or no-fill does not save the card. Google processes ad-related data under its policies; this may include device identifiers, advertising IDs, and IP. Pro removes ads permanently. See §3A.
-
-3. AI card recognition (optional)
-Recognition runs entirely on your iPhone by default; card content does not leave the device.
-
-In Settings › Card recognition you can switch to "AI" or "Hybrid" mode. Before enabling it, a one-time consent screen explains:
-
-The card's image and recognized text will be sent to the third-party AI
-provider you choose (currently Anthropic, OpenAI, or Google), which processes it under its own privacy policy.
-
-It is sent using your own API key; any costs are between you and that
-provider.
-
-胖胖名片 has no server involved in this — we do not intermediate and do not
-store your key, queries, or results.
-
-"Hybrid" mode calls the AI only when on-device recognition is not confident.
-You can switch back to on-device recognition at any time; card content then
-stops leaving the device.
-
-Before using AI recognition, make sure you are allowed to process the card
-holder's personal data.
-
-The app shows a rough local count of "AI recognitions / tokens this month" for your reference only; actual usage and cost are per your provider's bill. This count never leaves your device.
-
-3A. Free-tier ads (Google AdMob)
-Who sees them: Users who have not purchased Plump Card Pro and are
-past the lifetime first-50-cards ad-free trial.
-
-When: Before saving a new card after recognition and confirmation. The
-Rewarded ad must be completed; it never blocks capture or editing.
-
-Frequency: Eligibility starts with card 51; the production cooldown is at
-least 2 minutes and there is no catch-up display.
-
-Data: Ads are served by Google AdMob, which may use device advertising
-IDs, coarse location (IP), and app interaction signals per Google's Privacy Policy. We do not receive your card content for ads.
-
-Control: Pro removes ads permanently; iOS Privacy & Tracking settings may
-affect personalization.
-
-Trial count: The 50-card trial is stored on-device in Keychain on a
-best-effort basis (not guaranteed across devices).
-
-Third-party links:
-
-Anthropic Privacy Policy: https://www.anthropic.com/legal/privacy
-OpenAI Privacy Policy: https://openai.com/policies/privacy-policy
-Google Privacy Policy: https://policies.google.com/privacy
-4. Exporting to external address books
-When you choose "Add to iPhone Contacts", you write selected cards one-way into the iPhone Contacts app. You always preview first. 胖胖名片 does not import from Contacts and does not two-way sync. Those contacts are then handled under Apple / your contacts account provider's policy.
-
-Google / Outlook export is a planned future feature; when available it will also be one-way, preview-first, with no two-way sync.
-
-5. Your rights and controls
-Export: Settings › Export full backup (JSON) or Export CSV.
-Delete (four operations, each labeled with what it affects):
-1. Clear all data — deletes everything on the iPhone (library, images, recognized text, merge-undo records, your digital card, external OAuth tokens, AI keys and consent record). 2. Disconnect an external service (when Google / Outlook export ships) — removes the local OAuth token and attempts the service's revoke endpoint; does not auto-delete contacts you already exported to that service or iPhone Contacts. 3. (from 1.5) Delete iCloud sync data. 4. (future AI-account feature) Delete AI account and research data — not yet shipped.
-
-Correct: edit any field directly in the app.
-Because data is on your device and there is no 胖胖名片 account, we cannot
-access or delete it for you — you do all of the above in the app.
-
-6. Permissions
-Camera: to photograph cards.
-Photos: to import card photos from your library.
-Contacts: to write organized contacts after you confirm.
-7. Retention
-Data is kept until you delete it. Export job records are cleared 30 days after success; the local action log is cleared after 90 days. The app runs these on launch.
-
-8. Children
-胖胖名片 is designed for business users, is not directed to children under 13, and does not knowingly collect their personal data.
-
-9. Third parties
-Apple (Sign in with Apple, CloudKit — from 1.5): identity and sync data in
-your own iCloud, under Apple's terms.
-
-Anthropic / OpenAI / Google (only when you enable AI recognition, with your own
-key): see §3.
-
-Google / Microsoft (only when you export): see §4.
-Google AdMob (free tier only, when §3A applies): see §3A.
-Names and trademarks belong to their respective owners; this app refers to
-them nominatively to describe functionality, with no affiliation or endorsement.
-
-10. Changes
-We update the effective date on this page when the policy changes; material changes are surfaced in the app.
-
-11. Contact
-Privacy questions: lovesnoopy.world@gmail.com Developer: Hsuan Yu Liu
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>胖胖名片｜隱私政策</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;color:#202124;max-width:900px;margin:0 auto;padding:24px}h1,h2,h3{line-height:1.3}table{border-collapse:collapse;width:100%;margin:1em 0;display:block;overflow-x:auto}th,td{border:1px solid #d0d7de;padding:8px;text-align:left;vertical-align:top}th{background:#f6f8fa}blockquote{border-left:4px solid #bbb;margin:1em 0;padding:0 1em;color:#555}a{color:#0969da}code{background:#f0f0f0;padding:2px 4px;border-radius:4px}@media (prefers-color-scheme:dark){body{background:#111;color:#eee}th{background:#292d32}th,td{border-color:#555}blockquote{color:#bbb}code{background:#333}}</style></head>
+<body><h1>胖胖名片（Plump Card / PanPan Card）隱私政策 / Privacy Policy</h1>
+<blockquote><strong>狀態：已填入正式聯絡資料，待法律審閱。</strong> 公開位置：<a href="https://lovesnoopyworld.github.io/PanPanCard_Privacy/">https://lovesnoopyworld.github.io/PanPanCard_Privacy/</a>。正式上架前仍應確認內容並以此穩定 HTTPS 網址填入 App Store Connect。</blockquote>
+<blockquote>事實基礎見 [<code>docs/03-data-lifecycle-privacy-spec.md</code>](03-data-lifecycle-privacy-spec.md)；措辭與該文件 §3A.3 / §6 一致。<strong>不得改寫成「完全不外傳」的絕對句</strong> —— AI 辨識模式會傳資料給第三方（使用者主動選擇 + 自帶金鑰）。</blockquote>
+<p>---</p>
+<h2>中文</h2>
+<p><strong>生效日：2026-09-13</strong></p>
+<h3>摘要</h3>
+<p>胖胖名片 沒有自己的伺服器，也沒有 胖胖名片 帳號。你掃描的名片、辨識出的聯絡資訊與影像都存在你的 iPhone 上。App 不做分析追蹤、不收集使用行為資料。唯一會把資料送出裝置的情況，是你<strong>主動選擇</strong>使用「AI 名片辨識」，且用你自己的第三方 API 金鑰。</p>
+<h3>1. 資料存在哪裡</h3>
+<ul><li>名片結構化欄位、辨識文字、影像、見面脈絡、標籤、你的電子名片：存在 iPhone App 沙盒（受 iOS 檔案保護加密）。</li><li>外部服務的授權 token（<strong>未來</strong> Google / Outlook 匯出功能上線後，若你連接帳號）：只存在 iOS 鑰匙圈，不進其他儲存。</li><li>AI 服務商 API 金鑰（若你啟用 AI 辨識）：只存在 iOS 鑰匙圈，設定為「本機、不同步 iCloud、不隨備份還原到他機」。</li><li>胖胖名片 不將以上任何資料上傳到我們的伺服器 —— 我們沒有伺服器。</li></ul>
+<h3>2. 我們處理哪些資料、目的與依據</h3>
+<table><thead><tr><th>資料</th><th>目的</th><th>依據</th></tr></thead><tbody>
+<tr><td>名片影像與 OCR 文字</td><td>辨識並整理成聯絡人</td><td>履行你的要求</td></tr>
+<tr><td>聯絡欄位（姓名、公司、職稱、部門、電話、Email、地址、社群…）</td><td>名片庫核心功能</td><td>履行你的要求</td></tr>
+<tr><td>見面脈絡、標籤、備註</td><td>關係管理</td><td>履行你的要求</td></tr>
+<tr><td>本機操作記錄（僅記操作類型與時間，不記欄位內容，保存 90 天）</td><td>稽核與問題排查</td><td>正當利益（最小化）</td></tr>
+</tbody></table>
+<p>我們<strong>不</strong>收集：診斷 / 當機 / 使用行為資料、位置、聯絡人以外的個人資料。App 內沒有第三方分析或追蹤 SDK。</p>
+<p><strong>免費版（非 Pro）廣告</strong>：生涯前 <strong>50 張</strong>新名片為無廣告試用；超過後，App 可能在儲存前依規則顯示 <strong>Google AdMob Rewarded 廣告</strong>。必須完整觀看後才會儲存名片；取消或載入失敗不會儲存。廣告由 Google 依其政策處理；可能涉及裝置識別碼、廣告 ID、IP 等（依你的系統設定與 Google 設定而定）。Pro 買斷後不再顯示廣告。詳見 §3A。</p>
+<h3>3. AI 名片辨識（選用功能）</h3>
+<p>辨識<strong>預設完全在你的 iPhone 上進行</strong>，名片內容不會離開裝置。</p>
+<p>你可以在「設定 › 名片辨識」改用「AI 辨識」或「混合」模式。啟用前會有一次性同意畫面說明以下事項：</p>
+<ul><li>啟用後，名片的<strong>影像與辨識文字</strong>會傳送給你指定的第三方 AI 服務商（目前為 <strong>Anthropic</strong>、<strong>OpenAI</strong> 或 <strong>Google</strong>），由其依自己的隱私政策處理。</li><li>傳送使用<strong>你自己的 API 金鑰</strong>；相關費用由你與該服務商的關係承擔。</li><li>胖胖名片 <strong>沒有伺服器參與</strong>這個過程，不居間、不保存你的金鑰、查詢或辨識結果。</li><li>「混合」模式只有在裝置辨識信心不足時才呼叫 AI。</li><li>你可以隨時切回「裝置辨識」，之後名片內容即不再外傳。</li><li>使用 AI 辨識前，請確認你有權處理該名片持有人的個人資料。</li></ul>
+<p>App 內會顯示「本月 AI 辨識次數 / token」的粗略本機計數，僅供你參考；實際用量與費用以你的服務商帳單為準。此計數不會離開裝置。</p>
+<h3>3A. 免費版廣告（Google AdMob）</h3>
+<ul><li><strong>誰會看到</strong>：未購買 <strong>胖胖名片 Pro</strong>、且已超過生涯前 50 張無廣告試用的使用者。</li><li><strong>何時顯示</strong>：在儲存新名片前顯示 Rewarded 廣告；完整觀看後才儲存，不會阻擋拍攝、辨識或編輯流程。</li><li><strong>頻率</strong>：第 51 張起依 Rewarded 廣告頻率規則處理；兩次展示間隔至少 2 分鐘（不補播）。</li><li><strong>資料處理</strong>：廣告由 <strong>Google AdMob</strong> 載入與計量；可能使用裝置廣告識別碼、粗略位置（IP）、App 互動等，依 <a href="https://policies.google.com/privacy">Google 隱私政策</a> 與 <a href="https://support.google.com/admob/answer/6128543">AdMob 政策</a> 處理。我們不會因廣告而取得你的名片內容。</li><li><strong>控制</strong>：購買 Pro 可永久移除廣告；iOS「設定 › 隱私權與安全性 › 追蹤」與「Apple 廣告」等系統設定亦可能影響廣告個人化。</li><li><strong>試用計數</strong>：生涯 50 張試用以 Keychain <strong>最佳努力</strong>保存於本機，非跨裝置保證。</li></ul>
+<p>第三方服務商連結：</p>
+<ul><li>Anthropic 隱私政策：https://www.anthropic.com/legal/privacy</li><li>OpenAI 隱私政策：https://openai.com/policies/privacy-policy</li><li>Google 隱私政策：https://policies.google.com/privacy</li></ul>
+<h3>4. 匯出到外部通訊錄</h3>
+<p>當你選擇「加入 iPhone 通訊錄」時，是你主動把選定的名片單向寫入 iPhone「聯絡人」App。寫入前一律先讓你預覽。胖胖名片 不會把系統通訊錄匯入、也不做雙向同步。之後這些聯絡人依 Apple / 你使用的通訊錄帳號服務之政策處理。</p>
+<p><strong>Google / Outlook 匯出</strong>為計畫中的未來功能；上線後亦為你主動、單向寫入，寫入前會先預覽，且不做雙向同步。</p>
+<h3>5. 你的權利與控制</h3>
+<ul><li><strong>匯出</strong>：設定 › 匯出完整備份（JSON）或匯出 CSV。</li><li><strong>刪除（四種，介面分別標示影響範圍）</strong>：</li></ul>
+<p>1. 清除所有資料 —— 刪除 iPhone 上的一切（名片庫、影像、辨識文字、合併復原記錄、你的電子名片、外部授權 token、<strong>AI 金鑰與同意記錄</strong>）。 2. 解除外部服務（Google / Outlook 上線後）—— 刪除本機的授權 token 並嘗試呼叫該服務的撤銷端點；<strong>不會</strong>自動刪除你已匯出到該服務或 iPhone 通訊錄的聯絡人。 3.（1.5 起）刪除 iCloud 同步資料。 4.（未來 AI 帳號功能）刪除 AI 帳號與研究資料 —— 目前尚未推出。</p>
+<ul><li><strong>更正</strong>：直接在 App 內編輯任何欄位。</li><li>由於資料在你的裝置上、且沒有 胖胖名片 帳號，我們無法代你存取或刪除 —— 上述操作都由你在 App 內完成。</li></ul>
+<h3>6. 權限</h3>
+<ul><li>相機：拍攝名片。</li><li>相片：從相簿匯入名片照片。</li><li>通訊錄：在你確認後寫入整理好的聯絡人。</li></ul>
+<h3>7. 資料保存</h3>
+<p>資料保留到你刪除為止。匯出工作記錄成功後 30 天清除；本機操作記錄 90 天後清除。這些清理由 App 於啟動時執行。</p>
+<h3>8. 兒童</h3>
+<p>胖胖名片 針對商務使用者設計，不針對 13 歲以下兒童，也不會刻意收集其個人資料。</p>
+<h3>9. 第三方</h3>
+<ul><li><strong>Apple</strong>（Sign in with Apple、CloudKit —— 1.5 起）：身分與你自己 iCloud 內的同步資料，依 Apple 條款。</li><li><strong>Anthropic / OpenAI / Google</strong>（僅在你啟用 AI 辨識時，用你自帶金鑰）：見 §3。</li><li><strong>Google / Microsoft</strong>（僅在你主動匯出時）：見 §4。</li><li><strong>Google AdMob</strong>（僅免費版、符合 §3A 條件時）：見 §3A。</li><li>名稱與商標為各自所有者所有；本 App 僅為說明功能而指名引用，與上述任何一方無隸屬或背書關係。</li></ul>
+<h3>10. 變更</h3>
+<p>政策更新時會修改本頁的生效日；重大變更會在 App 內提示。</p>
+<h3>11. 聯絡我們</h3>
+<p>隱私相關問題請寄：<strong>lovesnoopy.world@gmail.com</strong> 開發者：<strong>Hsuan Yu Liu</strong></p>
+<p>---</p>
+<h2>English</h2>
+<p><strong>Effective date: 2026-09-13</strong></p>
+<h3>Summary</h3>
+<p>胖胖名片 has no server of its own and no 胖胖名片 account. The business cards you scan, the contact details recognized from them, and the images all stay on your iPhone. The app does no analytics or tracking and collects no usage data. The only time any data leaves your device is when <strong>you choose</strong> to use "AI card recognition" with your own third-party API key.</p>
+<h3>1. Where your data lives</h3>
+<ul><li>Structured card fields, recognized text, images, meeting context, tags, your</li></ul>
+<p>digital card: in the iPhone app sandbox, encrypted with iOS file protection.</p>
+<ul><li>OAuth tokens (when the future Google / Outlook export feature ships and you connect an account): iOS Keychain only.</li><li>AI provider API key (if you enable AI recognition): iOS Keychain only, marked</li></ul>
+<p>device-only — not synced to iCloud, not restored to another device.</p>
+<ul><li>胖胖名片 does not upload any of the above to our servers — we have none.</li></ul>
+<h3>2. What we process, why, and on what basis</h3>
+<table><thead><tr><th>Data</th><th>Purpose</th><th>Basis</th></tr></thead><tbody>
+<tr><td>Card image and OCR text</td><td>Recognize and organize into a contact</td><td>Your request</td></tr>
+<tr><td>Contact fields (name, company, title, department, phone, email, address, social…)</td><td>Core card-library function</td><td>Your request</td></tr>
+<tr><td>Meeting context, tags, notes</td><td>Relationship management</td><td>Your request</td></tr>
+<tr><td>Local action log (action type + time only, no field content, kept 90 days)</td><td>Audit / troubleshooting</td><td>Legitimate interest (minimized)</td></tr>
+</tbody></table>
+<p>We do <strong>not</strong> collect diagnostics / crash / behavioral data, location, or personal data beyond contacts. There is no third-party analytics or tracking SDK in the app.</p>
+<p><strong>Ads (free tier, non-Pro)</strong>: If you have not purchased Pro, the app may show <strong>Google AdMob Rewarded</strong> ads before saving a new card after the first 50 cards. The ad must be completed before saving; cancellation or no-fill does not save the card. Google processes ad-related data under its policies; this may include device identifiers, advertising IDs, and IP. Pro removes ads permanently. See §3A.</p>
+<h3>3. AI card recognition (optional)</h3>
+<p>Recognition runs <strong>entirely on your iPhone by default</strong>; card content does not leave the device.</p>
+<p>In Settings › Card recognition you can switch to "AI" or "Hybrid" mode. Before enabling it, a one-time consent screen explains:</p>
+<ul><li>The card's <strong>image and recognized text</strong> will be sent to the third-party AI</li></ul>
+<p>provider you choose (currently <strong>Anthropic</strong>, <strong>OpenAI</strong>, or <strong>Google</strong>), which processes it under its own privacy policy.</p>
+<ul><li>It is sent using <strong>your own API key</strong>; any costs are between you and that</li></ul>
+<p>provider.</p>
+<ul><li>胖胖名片 has <strong>no server involved</strong> in this — we do not intermediate and do not</li></ul>
+<p>store your key, queries, or results.</p>
+<ul><li>"Hybrid" mode calls the AI only when on-device recognition is not confident.</li><li>You can switch back to on-device recognition at any time; card content then</li></ul>
+<p>stops leaving the device.</p>
+<ul><li>Before using AI recognition, make sure you are allowed to process the card</li></ul>
+<p>holder's personal data.</p>
+<p>The app shows a rough local count of "AI recognitions / tokens this month" for your reference only; actual usage and cost are per your provider's bill. This count never leaves your device.</p>
+<h3>3A. Free-tier ads (Google AdMob)</h3>
+<ul><li><strong>Who sees them</strong>: Users who have not purchased <strong>Plump Card Pro</strong> and are</li></ul>
+<p>past the lifetime first-50-cards ad-free trial.</p>
+<ul><li><strong>When</strong>: Before saving a new card after recognition and confirmation. The</li></ul>
+<p>Rewarded ad must be completed; it never blocks capture or editing.</p>
+<ul><li><strong>Frequency</strong>: Eligibility starts with card 51; the production cooldown is at</li></ul>
+<p>least 2 minutes and there is no catch-up display.</p>
+<ul><li><strong>Data</strong>: Ads are served by <strong>Google AdMob</strong>, which may use device advertising</li></ul>
+<p>IDs, coarse location (IP), and app interaction signals per <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. We do not receive your card content for ads.</p>
+<ul><li><strong>Control</strong>: Pro removes ads permanently; iOS Privacy &amp; Tracking settings may</li></ul>
+<p>affect personalization.</p>
+<ul><li><strong>Trial count</strong>: The 50-card trial is stored on-device in Keychain on a</li></ul>
+<p>best-effort basis (not guaranteed across devices).</p>
+<p>Third-party links:</p>
+<ul><li>Anthropic Privacy Policy: https://www.anthropic.com/legal/privacy</li><li>OpenAI Privacy Policy: https://openai.com/policies/privacy-policy</li><li>Google Privacy Policy: https://policies.google.com/privacy</li></ul>
+<h3>4. Exporting to external address books</h3>
+<p>When you choose "Add to iPhone Contacts", you write selected cards one-way into the iPhone Contacts app. You always preview first. 胖胖名片 does not import from Contacts and does not two-way sync. Those contacts are then handled under Apple / your contacts account provider's policy.</p>
+<p><strong>Google / Outlook export</strong> is a planned future feature; when available it will also be one-way, preview-first, with no two-way sync.</p>
+<h3>5. Your rights and controls</h3>
+<ul><li><strong>Export</strong>: Settings › Export full backup (JSON) or Export CSV.</li><li><strong>Delete</strong> (four operations, each labeled with what it affects):</li></ul>
+<p>1. Clear all data — deletes everything on the iPhone (library, images, recognized text, merge-undo records, your digital card, external OAuth tokens, <strong>AI keys and consent record</strong>). 2. Disconnect an external service (when Google / Outlook export ships) — removes the local OAuth token and attempts the service's revoke endpoint; does <strong>not</strong> auto-delete contacts you already exported to that service or iPhone Contacts. 3. (from 1.5) Delete iCloud sync data. 4. (future AI-account feature) Delete AI account and research data — not yet shipped.</p>
+<ul><li><strong>Correct</strong>: edit any field directly in the app.</li><li>Because data is on your device and there is no 胖胖名片 account, we cannot</li></ul>
+<p>access or delete it for you — you do all of the above in the app.</p>
+<h3>6. Permissions</h3>
+<ul><li>Camera: to photograph cards.</li><li>Photos: to import card photos from your library.</li><li>Contacts: to write organized contacts after you confirm.</li></ul>
+<h3>7. Retention</h3>
+<p>Data is kept until you delete it. Export job records are cleared 30 days after success; the local action log is cleared after 90 days. The app runs these on launch.</p>
+<h3>8. Children</h3>
+<p>胖胖名片 is designed for business users, is not directed to children under 13, and does not knowingly collect their personal data.</p>
+<h3>9. Third parties</h3>
+<ul><li><strong>Apple</strong> (Sign in with Apple, CloudKit — from 1.5): identity and sync data in</li></ul>
+<p>your own iCloud, under Apple's terms.</p>
+<ul><li><strong>Anthropic / OpenAI / Google</strong> (only when you enable AI recognition, with your own</li></ul>
+<p>key): see §3.</p>
+<ul><li><strong>Google / Microsoft</strong> (only when you export): see §4.</li><li><strong>Google AdMob</strong> (free tier only, when §3A applies): see §3A.</li><li>Names and trademarks belong to their respective owners; this app refers to</li></ul>
+<p>them nominatively to describe functionality, with no affiliation or endorsement.</p>
+<h3>10. Changes</h3>
+<p>We update the effective date on this page when the policy changes; material changes are surfaced in the app.</p>
+<h3>11. Contact</h3>
+<p>Privacy questions: <strong>lovesnoopy.world@gmail.com</strong> Developer: <strong>Hsuan Yu Liu</strong></p></body></html>
