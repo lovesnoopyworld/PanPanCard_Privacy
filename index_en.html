@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Plump Card — Privacy Policy</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="en" href="index_en.html">
   <link rel="alternate" hreflang="ja" href="index_jp.html">
   <link rel="alternate" hreflang="zh-Hant" href="index.html">
 </head>
@@ -19,13 +19,12 @@
     <strong>Contact:</strong> <a href="mailto:lovesnoopy.world@gmail.com">lovesnoopy.world@gmail.com</a></p>
 
     <h2>Summary</h2>
-    <p>Plump Card has no server of its own and no Plump Card account. When you do not use AI, sharing, exporting, or another external service, the business cards you scan, the contact details recognized from them, and the images stay on your iPhone. Plump Card does not operate analytics or behavioral tracking; AdMob, AI, sharing, and export features process data as described below.</p>
+    <p>Plump Card has no server of its own and no Plump Card account. The business cards you scan, recognized contact details, and images are processed on your iPhone. Plump Card does not operate analytics or behavioral tracking; the free-tier AdMob SDK processes advertising-related data under Google's policy.</p>
 
     <h2>1. Where your data lives</h2>
     <ul>
       <li>Structured card fields, recognized text, images, meeting context, tags, your digital card: in the iPhone app sandbox, encrypted with iOS file protection.</li>
       <li>The Release version does not provide external address-book export, so no external-service authorization token is created.</li>
-      <li>AI provider API key (if you enable AI recognition): iOS Keychain only, marked device-only — not synced to iCloud, not restored to another device.</li>
       <li>Plump Card does not upload any of the above to our servers — we have none.</li>
     </ul>
 
@@ -44,18 +43,8 @@
     <p>We do <strong>not</strong> independently collect diagnostics / crash / behavioral data, location, or personal data beyond contacts. There is no third-party analytics SDK in the app; the free-tier AdMob SDK may process device, advertising, and interaction data under Google's policy. See §3A.</p>
     <p><strong>Ads (free tier, non-Pro)</strong>: If you have not purchased Pro, the app may show <strong>Google AdMob Rewarded</strong> ads before saving a new card after the first <strong>50</strong> cards. The ad must be completed before saving; cancellation or no-fill does not save the card. Google processes ad-related data under its policies; this may include device identifiers, advertising IDs, and IP. Pro removes ads permanently. See §3A below.</p>
 
-    <h2>3. AI card recognition (optional)</h2>
-    <p>Recognition runs <strong>entirely on your iPhone by default</strong>; card content does not leave the device.</p>
-    <p>In Settings › Card recognition you can switch to AI or Hybrid mode. Before enabling it, a one-time consent screen explains:</p>
-    <ul>
-      <li>The card's <strong>image and recognized text</strong> will be sent to the third-party AI provider you choose (currently <strong>Anthropic</strong>, <strong>OpenAI</strong>, or <strong>Google</strong>), which processes it under its own privacy policy.</li>
-      <li>It is sent using <strong>your own API key</strong>; any costs are between you and that provider.</li>
-      <li>Plump Card has <strong>no server involved</strong> in this — we do not intermediate and do not store your key, queries, or results. Retention, deletion, and other processing are governed by the provider you choose; Plump Card does not control its retention period.</li>
-      <li>Hybrid mode calls the AI only when on-device recognition is not confident.</li>
-      <li>You can switch back to on-device recognition at any time; card content then stops leaving the device.</li>
-      <li>Before using AI recognition, make sure you are allowed to process the card holder's personal data.</li>
-    </ul>
-    <p>The app shows a rough local count of AI recognitions / tokens this month for your reference only; actual usage and cost are per your provider's bill. This count never leaves your device.</p>
+    <h2>3. Card recognition</h2>
+    <p>In Release 1.0, business-card recognition runs entirely on your iPhone. Card images and recognized text are not sent to third-party AI providers for recognition.</p>
 
     <h2>3A. Free-tier ads (Google AdMob)</h2>
     <ul>
@@ -65,12 +54,6 @@
       <li><strong>Data</strong>: Ads are served by <strong>Google AdMob</strong>, which may use device advertising IDs, coarse location (IP), and app interaction signals per <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543">AdMob policies</a>. We do not receive your card content for ads.</li>
       <li><strong>Control</strong>: Pro removes ads permanently; iOS Privacy &amp; Tracking settings may affect personalization.</li>
       <li><strong>Trial count</strong>: The 50-card trial is stored on-device in Keychain on a best-effort basis (not guaranteed across devices).</li>
-    </ul>
-    <p>Third-party links:</p>
-    <ul>
-      <li>Anthropic Privacy Policy: <a href="https://www.anthropic.com/legal/privacy">https://www.anthropic.com/legal/privacy</a></li>
-      <li>OpenAI Privacy Policy: <a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a></li>
-      <li>Google Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
     </ul>
 
     <h2>4. Exporting to external address books</h2>
@@ -83,10 +66,9 @@
       <li><strong>Sharing</strong>: The Release version provides Share CSV and Share vCard; full-backup sharing, export, import, and restore are not supported. A shared CSV contains card contact details; keep it safe.</li>
       <li><strong>Delete</strong> (four operations, each labeled with what it affects):
         <ol>
-          <li>Clear all data — deletes everything on the iPhone (library, images, recognized text, merge-undo records, your digital card, external OAuth tokens, <strong>AI keys and consent record</strong>).</li>
+          <li>Clear all data — deletes everything on the iPhone (library, images, recognized text, merge-undo records, your digital card, and local settings).</li>
           <li>The Release version does not create or manage external address-book authorization tokens. Copies shared with other apps or written to system Contacts must be removed through those apps.</li>
           <li>(from 1.5) Delete iCloud sync data.</li>
-          <li>(future AI-account feature) Delete AI account and research data — not yet shipped.</li>
         </ol>
       </li>
       <li><strong>Correct</strong>: edit any field directly in the app.</li>
@@ -109,7 +91,6 @@
     <h2>9. Third parties</h2>
     <ul>
       <li><strong>Apple</strong> (Sign in with Apple, CloudKit — from 1.5): identity and sync data in your own iCloud, under Apple's terms.</li>
-      <li><strong>Anthropic / OpenAI / Google</strong> (only when you enable AI recognition, with your own key): see §3.</li>
       <li><strong>Google AdMob</strong> (free tier only, when §3A applies): see §3A.</li>
       <li>Names and trademarks belong to their respective owners; this app refers to them nominatively to describe functionality, with no affiliation or endorsement.</li>
     </ul>

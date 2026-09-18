@@ -19,13 +19,12 @@
     <strong>聯絡：</strong><a href="mailto:lovesnoopy.world@gmail.com">lovesnoopy.world@gmail.com</a></p>
 
     <h2>摘要</h2>
-    <p>胖胖名片沒有自己的伺服器，也沒有胖胖名片帳號。未啟用 AI、分享、匯出或外部服務時，你掃描的名片、辨識出的聯絡資訊與影像都留在你的 iPhone 上。胖胖名片本身不使用分析或行為追蹤服務；若你使用 AdMob、AI、分享或匯出功能，相關資料會依該功能與服務商政策處理。</p>
+    <p>胖胖名片沒有自己的伺服器，也沒有胖胖名片帳號。你掃描的名片、辨識出的聯絡資訊與影像都在你的 iPhone 上以裝置端辨識處理。胖胖名片本身不使用分析或行為追蹤服務；免費版的 AdMob 廣告依 Google 政策處理廣告相關資料。</p>
 
     <h2>1. 資料存在哪裡</h2>
     <ul>
       <li>名片結構化欄位、辨識文字、影像、見面脈絡、標籤、你的電子名片：存在 iPhone App 沙盒（受 iOS 檔案保護加密）。</li>
       <li>Release 版本不提供外部通訊錄匯出，因此不會建立外部服務授權 token。</li>
-      <li>AI 服務商 API 金鑰（若你啟用 AI 辨識）：只存在 iOS 鑰匙圈，設定為「本機、不同步 iCloud、不隨備份還原到他機」。</li>
       <li>胖胖名片不將以上任何資料上傳到我們的伺服器 —— 我們沒有伺服器。</li>
     </ul>
 
@@ -44,18 +43,8 @@
     <p>我們<strong>不</strong>自行收集：診斷 / 當機 / 使用行為資料、位置、聯絡人以外的個人資料。App 內沒有第三方分析 SDK；免費版的 AdMob 廣告 SDK 可能依 Google 政策處理裝置、廣告與互動資料，詳見下方 §3A。</p>
     <p><strong>免費版（非 Pro）廣告</strong>：生涯前 <strong>50 張</strong>新名片為無廣告試用；超過後，App 可能在儲存前依規則顯示 <strong>Google AdMob Rewarded 廣告</strong>。必須完整觀看後才會儲存名片；取消或載入失敗不會儲存。廣告由 Google 依其政策處理；可能涉及裝置識別碼、廣告 ID、IP 等（依你的系統設定與 Google 設定而定）。Pro 買斷後不再顯示廣告。詳見下方 §3A。</p>
 
-    <h2>3. AI 名片辨識（選用功能）</h2>
-    <p>辨識<strong>預設完全在你的 iPhone 上進行</strong>，名片內容不會離開裝置。</p>
-    <p>你可以在「設定 › 名片辨識」改用「AI 辨識」或「混合」模式。啟用前會有一次性同意畫面說明以下事項：</p>
-    <ul>
-      <li>啟用後，名片的<strong>影像與辨識文字</strong>會傳送給你指定的第三方 AI 服務商（目前為 <strong>Anthropic</strong>、<strong>OpenAI</strong> 或 <strong>Google</strong>），由其依自己的隱私政策處理。</li>
-      <li>傳送使用<strong>你自己的 API 金鑰</strong>；相關費用由你與該服務商的關係承擔。</li>
-      <li>胖胖名片<strong>沒有伺服器參與</strong>這個過程，不居間、不保存你的金鑰、查詢或辨識結果。資料的保存、刪除與其他處理依你選擇的供應商政策辦理，胖胖名片不控制其保存期限。</li>
-      <li>「混合」模式只有在裝置辨識信心不足時才呼叫 AI。</li>
-      <li>你可以隨時切回「裝置辨識」，之後名片內容即不再外傳。</li>
-      <li>使用 AI 辨識前，請確認你有權處理該名片持有人的個人資料。</li>
-    </ul>
-    <p>App 內會顯示「本月 AI 辨識次數 / token」的粗略本機計數，僅供你參考；實際用量與費用以你的服務商帳單為準。此計數不會離開裝置。</p>
+    <h2>3. 名片辨識</h2>
+    <p>Release 1.0 的名片辨識完全在你的 iPhone 上進行；名片影像與辨識文字不會因辨識功能傳送給第三方 AI 服務商。</p>
 
     <h2>3A. 免費版廣告（Google AdMob）</h2>
     <ul>
@@ -65,12 +54,6 @@
       <li><strong>資料處理</strong>：廣告由 <strong>Google AdMob</strong> 載入與計量；可能使用裝置廣告識別碼、粗略位置（IP）、App 互動等，依 <a href="https://policies.google.com/privacy">Google 隱私政策</a> 與 <a href="https://support.google.com/admob/answer/6128543">AdMob 政策</a> 處理。我們不會因廣告而取得你的名片內容。</li>
       <li><strong>控制</strong>：購買 Pro 可永久移除廣告；iOS「設定 › 隱私權與安全性 › 追蹤」與「Apple 廣告」等系統設定亦可能影響廣告個人化。</li>
       <li><strong>試用計數</strong>：生涯 50 張試用以 Keychain <strong>最佳努力</strong>保存於本機，非跨裝置保證。</li>
-    </ul>
-    <p>第三方服務商連結：</p>
-    <ul>
-      <li>Anthropic 隱私政策：<a href="https://www.anthropic.com/legal/privacy">https://www.anthropic.com/legal/privacy</a></li>
-      <li>OpenAI 隱私政策：<a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a></li>
-      <li>Google 隱私政策：<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
     </ul>
 
     <h2>4. 匯出到外部通訊錄</h2>
@@ -83,10 +66,9 @@
       <li><strong>分享</strong>：Release 版本提供分享 CSV 與分享 vCard；完整備份的分享、匯出、匯入與還原目前不支援。分享 CSV 包含名片的聯絡資訊，請妥善保管。</li>
       <li><strong>刪除（四種，介面分別標示影響範圍）</strong>：
         <ol>
-          <li>清除所有資料 —— 刪除 iPhone 上的一切（名片庫、影像、辨識文字、合併復原記錄、你的電子名片、外部授權 token、<strong>AI 金鑰與同意記錄</strong>）。</li>
+          <li>清除所有資料 —— 刪除 iPhone 上的一切（名片庫、影像、辨識文字、合併復原記錄、你的電子名片與本機設定）。</li>
           <li>Release 版本不建立或管理外部通訊錄授權 token；已分享或寫入其他 App 的副本，請由該 App 自行刪除。</li>
           <li>（1.5 起）刪除 iCloud 同步資料。</li>
-          <li>（未來 AI 帳號功能）刪除 AI 帳號與研究資料 —— 目前尚未推出。</li>
         </ol>
       </li>
       <li><strong>更正</strong>：直接在 App 內編輯任何欄位。</li>
@@ -109,7 +91,6 @@
     <h2>9. 第三方</h2>
     <ul>
       <li><strong>Apple</strong>（Sign in with Apple、CloudKit —— 1.5 起）：身分與你自己 iCloud 內的同步資料，依 Apple 條款。</li>
-      <li><strong>Anthropic / OpenAI / Google</strong>（僅在你啟用 AI 辨識時，用你自帶金鑰）：見 §3。</li>
       <li><strong>Google AdMob</strong>（僅免費版、符合 §3A 條件時）：見 §3A。</li>
       <li>名稱與商標為各自所有者所有；本 App 僅為說明功能而指名引用，與上述任何一方無隸屬或背書關係。</li>
     </ul>
